@@ -1,7 +1,7 @@
 {
 	"lock": false,
 	"tasks": {
-		"start": "deno run -RN jsr:@std/http/file-server ."
+		"start": "deno run -RN jsr:@std/http/file-server -p 49363 ."
 	},
 	"imports": {},
 	"fmt": {
