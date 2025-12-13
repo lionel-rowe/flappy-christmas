@@ -5,13 +5,13 @@
 import { canvas } from './canvas.mjs'
 import { game } from './game.mjs'
 import { sounds } from './sounds.mjs'
-import { FRAME_INTERVAL } from './constants.mjs'
+import { CANVAS_HEIGHT, CANVAS_WIDTH, FRAME_INTERVAL } from './constants.mjs'
 import { Player } from './player.mjs'
 import { Scenery } from './scenery.mjs'
 /** @typedef {import('./sprite.mjs').Sprite} Sprite */
 
-canvas.width = 276
-canvas.height = 414
+canvas.width = CANVAS_WIDTH
+canvas.height = CANVAS_HEIGHT
 canvas.tabIndex = 0 // make canvas focusable to receive keyboard events
 
 function doAction() {
@@ -45,8 +45,8 @@ canvas.addEventListener('keydown', (e) => {
 })
 
 function gameLoop() {
-	const { background, scenery, ground, player, ui } = game
-	for (const obj of [background, scenery, ground, player, ui]) {
+	const { background, scenery, snow, ground, player, ui } = game
+	for (const obj of [background, scenery, snow, ground, player, ui]) {
 		obj.update()
 		obj.draw()
 	}

@@ -8,24 +8,26 @@ See [SETUP.md](SETUP.md) for instructions on setting up the development environm
 
 ## Ideas
 
-- Swap in Christmas-themed assets
+<!-- - Swap in Christmas-themed assets
   - Sprites
   - Background
-  - Sound
-- Reduce background opacity
-- Page title
+  - Sound -->
+<!-- - Reduce background opacity -->
+<!-- - Page title -->
+
 - Parameterize difficulty
   - Gap
   - Frequency
   - Hitboxes
   - Difficulty levels
-- Favicon
-- Music
-  - Play/mute button
+
+<!-- - Favicon -->
+<!-- - Music
+  - Play/mute button -->
+
 - Snowfall
   - https://github.com/catdad/canvas-confetti
 - Remove visual artifacts on player sprite
-- Parallax scrolling
 - Custom assets
 - Drag sleigh
   - Rigid version

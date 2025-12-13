@@ -6,3 +6,6 @@ export const FPS = 50
 export const FRAME_INTERVAL = 1000 / FPS
 /** Determines movement speed relative to ground */
 export const DELTA_X = 2
+
+export const CANVAS_WIDTH = 276
+export const CANVAS_HEIGHT = 414

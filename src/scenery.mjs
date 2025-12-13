@@ -19,7 +19,7 @@ class Obstacle {
 export class Scenery extends GameObject {
 	top = { img: images.obstacleTop }
 	bottom = { img: images.obstacleBottom }
-	gap = 85
+	gap = 100
 	moved = true
 	obstacles = /** @type {Obstacle[]} */ ([])
 	/** @override */

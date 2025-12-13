@@ -19,8 +19,8 @@ export class Ui extends GameObject {
 				const x = (canvas.width - this.getReady.img.width) / 2
 				const tx = (canvas.width - this.tapToStart.spriteWidth) / 2
 				const ty = y + this.getReady.img.height - this.tapToStart.spriteHeight
-				ctx.drawImage(this.getReady.img, x, y)
-				this.tapToStart.render(ctx, [tx, ty], this.frame)
+				ctx.drawImage(this.getReady.img, x, y - 50)
+				this.tapToStart.render(ctx, [tx, ty + 20], this.frame)
 				break
 			}
 			case 'gameOver': {

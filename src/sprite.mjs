@@ -30,10 +30,10 @@ export class Sprite {
 
 	/**
 	 * @param {string} src
-	 * @param {number} spriteWidth
+	 * @param {number} numFrames
 	 */
-	static async load(src, spriteWidth) {
-		const sheet = new Sprite(src, spriteWidth)
+	static async load(src, numFrames) {
+		const sheet = new Sprite(src, numFrames)
 		await sheet.#loaded
 		return sheet
 	}

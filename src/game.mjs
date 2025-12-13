@@ -4,6 +4,7 @@ import { Ground } from './ground.mjs'
 import { Scenery } from './scenery.mjs'
 import { Ui } from './ui.mjs'
 import { Background } from './background.mjs'
+import { Snow } from './snow.mjs'
 
 /** @typedef {'initial' | 'playing' | 'gameOver'} Status */
 
@@ -16,4 +17,5 @@ export const game = {
 	scenery: new Scenery(),
 	ui: new Ui(),
 	background: new Background(),
+	snow: new Snow(),
 }
