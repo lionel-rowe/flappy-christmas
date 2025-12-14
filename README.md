@@ -48,3 +48,5 @@ Christmas assets from various sources:
 - Audio icons
   - https://commons.wikimedia.org/wiki/File:Speaker_Icon.svg (CC0/public domain)
   - https://commons.wikimedia.org/wiki/File:Mute_Icon.svg (CC0/public domain)
+- Sounds:
+  - die.wav = Crash & Glass.wav by Rock Savage -- https://freesound.org/s/59263/ -- License: Sampling+
