@@ -25,8 +25,9 @@ export class Snow extends GameObject {
 		this.size = size
 	}
 
-	canvas = Object.assign(document.createElement('canvas'), { width: canvas.width, height: canvas.height })
-	confetti = confetti.create(this.canvas, {/* useWorker: true */})
+	canvas = new OffscreenCanvas(canvas.width, canvas.height)
+	// can't use worker due to https://github.com/catdad/canvas-confetti/issues/107
+	confetti = confetti.create(this.canvas, { useWorker: false })
 
 	skew = 1
 
