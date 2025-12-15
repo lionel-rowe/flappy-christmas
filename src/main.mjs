@@ -5,16 +5,26 @@
 import { canvas } from './canvas.mjs'
 import { game } from './game.mjs'
 import { sounds } from './sounds.mjs'
-import { CANVAS_HEIGHT, CANVAS_WIDTH, FRAME_INTERVAL } from './constants.mjs'
+import { CANVAS_HEIGHT, CANVAS_WIDTH, FRAME_INTERVAL, GROUND_HEIGHT } from './constants.mjs'
 import { Player } from './player.mjs'
 import { Scenery } from './scenery.mjs'
 import './music.mjs'
 
 /** @typedef {import('./sprite.mjs').Sprite} Sprite */
 
-canvas.width = CANVAS_WIDTH
-canvas.height = CANVAS_HEIGHT
 canvas.tabIndex = 0 // make canvas focusable to receive keyboard events
+
+const resize = () => {
+	canvas.height = CANVAS_HEIGHT
+	canvas.width = CANVAS_HEIGHT * (window.innerWidth / window.innerHeight)
+	game.ground.y = canvas.height - GROUND_HEIGHT
+	game.player.engine.width = canvas.width
+	game.snowForeground.resize()
+	game.snowBackground.resize()
+}
+
+window.addEventListener('resize', resize)
+resize()
 
 function doAction() {
 	switch (game.status) {

@@ -27,3 +27,11 @@ export async function promiseAllKeyed(obj) {
 	}
 	return resObj
 }
+
+/**
+ * @param {number} min
+ * @param {number} max
+ */
+export function randomInRange(min, max) {
+	return Math.random() * (max - min) + min
+}

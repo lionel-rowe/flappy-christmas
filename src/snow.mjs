@@ -3,6 +3,7 @@ import './vendor/confetti.browser.min.js'
 
 import { GameObject } from './gameObject.mjs'
 import { canvas, ctx } from './canvas.mjs'
+import { randomInRange } from './utils.mjs'
 
 // @ts-ignore TODO types
 const confetti = globalThis.confetti
@@ -49,9 +50,9 @@ export class Snow extends GameObject {
 			},
 			colors: ['#ffffff'],
 			shapes: ['circle'],
-			gravity: this.#randomInRange(0.2, 0.3) * this.speed,
-			scalar: this.#randomInRange(0.2, 0.4) * this.size,
-			drift: this.#randomInRange(-0.4, 0.4) * this.speed,
+			gravity: randomInRange(0.2, 0.3) * this.speed,
+			scalar: randomInRange(0.2, 0.4) * this.size,
+			drift: randomInRange(-0.4, 0.4) * this.speed,
 			flat: true,
 		})
 	}
@@ -63,11 +64,9 @@ export class Snow extends GameObject {
 		})
 	}
 
-	/**
-	 * @param {number} min
-	 * @param {number} max
-	 */
-	#randomInRange(min, max) {
-		return Math.random() * (max - min) + min
+	resize() {
+		this.canvas.width = canvas.width
+		this.canvas.height = canvas.height
+		this.confetti = confetti.create(this.canvas, { useWorker: false })
 	}
 }

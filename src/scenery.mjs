@@ -25,27 +25,25 @@ export class Scenery extends GameObject {
 	obstacles = /** @type {Obstacle[]} */ ([])
 	/** @override */
 	draw() {
-		for (let i = 0; i < this.obstacles.length; ++i) {
-			const p = this.obstacles[i]
-			ctx.drawImage(this.top.img, p.x, p.y)
+		for (const obstacle of this.obstacles) {
+			ctx.drawImage(this.top.img, obstacle.x, obstacle.y)
 			ctx.drawImage(
 				this.bottom.img,
-				p.x,
-				p.y + this.top.img.height + this.gap,
+				obstacle.x,
+				obstacle.y + this.top.img.height + this.gap,
 			)
 		}
 	}
 	/** @override */
 	update() {
-		if (game.status !== 'playing') return
-		if (game.frames % this.distance === 0) {
-			this.obstacles.push(
-				new Obstacle(
-					canvas.width,
-					-210 * Math.min(Math.random() + 1, 1.8),
-				),
-			)
+		const increment = () => ((this.distance + this.top.img.width) * (Math.random() * 0.5 + 1))
+		const startX = (this.obstacles.at(-1)?.x ?? increment()) + increment()
+
+		for (let x = startX; x < canvas.width || this.obstacles.length < 2; x += increment()) {
+			this.#addObstacle(x)
 		}
+
+		if (game.status !== 'playing') return
 
 		for (const obstacle of this.obstacles) {
 			obstacle.x -= DELTA_X
@@ -55,5 +53,15 @@ export class Scenery extends GameObject {
 			this.obstacles.shift()
 			this.moved = true
 		}
+	}
+
+	/** @param {number} x */
+	#addObstacle(x) {
+		this.obstacles.push(
+			new Obstacle(
+				x,
+				-210 * Math.min(Math.random() + 1, 1.8),
+			),
+		)
 	}
 }
