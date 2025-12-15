@@ -48,7 +48,7 @@ export class Ui extends GameObject {
 			}
 			case 'gameOver': {
 				ctx.lineWidth = 3
-				ctx.font = this.font(30)
+				ctx.font = this.font(25)
 				const scoreMessage = this.scoreMessage('SCORE', game.score)
 				this.drawText(scoreMessage, canvas.height / 2)
 				try {
@@ -78,7 +78,7 @@ export class Ui extends GameObject {
 	 * @param {number} score
 	 */
 	scoreMessage(caption, score) {
-		return `${caption.padEnd(6)}:${String(score).padStart(6)}`
+		return `${caption.padEnd(6)}:${String(score).padStart(4)}`
 	}
 
 	/**

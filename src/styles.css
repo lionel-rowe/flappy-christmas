@@ -7,6 +7,7 @@ body {
 	position: relative;
 	width: 100vw;
 	height: 100vh;
+	height: 100dvh;
 }
 
 canvas#target {
@@ -25,22 +26,22 @@ canvas#target {
 		background: none;
 		border: none;
 		cursor: pointer;
-		padding: 0.5rem;
+		padding: 8px;
 		outline: none;
 
 		img {
-			width: 1.5rem;
+			width: 24px;
 		}
 	}
 }
 
 .repo-link {
 	position: absolute;
-	bottom: 0.5rem;
-	right: 0.7rem;
+	bottom: 8px;
+	right: 12px;
 
 	img.icon {
-		width: 1.3rem;
+		width: 22px;
 		mix-blend-mode: color-burn;
 		opacity: 0.2;
 	}
